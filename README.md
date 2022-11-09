@@ -6,24 +6,17 @@ Projeto em PHP para realizar login e 2 etapas de verificação utilizado o envio
 ## 🔧 Instruções
 Inicialmente vai ser solicitado o login do usuário onde será feito algumas verificações onde a primeira análise é sabe se existe um cookie chamado token (o nome de login criptografado em md5) se existir vai redirecionar para solicitação da senha e atráves do método POST Criar duas variáveis token e chave(código sms que foi salvo na base de dados) so então redirecionar para o sistema secundário. Caso o cookie não existar será enviado um sms ao telefone cadastrado e solicitado o código se o mesmo corresponder encaminhar para digitar a senha e criado o cookie na máquina.
 
-### ⌨️ Tecnologia utilizadas
+## ⌨️ Tecnologia utilizadas
  - PHP POO
- 
  - Composer
- 
  - SMS API (smsmarket)
- 
  - Banco de dados mysql PDO
  
-### ⚙️ Configuração e Instalação
+## ⚙️ Configuração e Instalação
  - habilitar o módulo de reescrita no apache (veja tutorial na internet).
- 
  - Configurar/atualizar o composer.
- 
- - Editar as constantes do  arquivo /App/APP.php onde contém dados de configuração como 	 	 por exemplo nome do projeto, hostname, usuário e senha do banco de dados e etc.
- 
+ - Editar as constantes do  arquivo /App/APP.php onde contém dados de configuração como por exemplo nome do projeto, hostname, usuário e senha do banco de dados e etc.
  - Criar a base de dados.
- 
  - executar o projeto.
  
 ```

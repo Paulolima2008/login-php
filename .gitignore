@@ -1,1 +1,10 @@
+# Ignore os arquivos da ide Eclipse
+/.settings/
+.buildpath
+.project
+
+# Ignore o arquivo app.php
+/App/app.php
+
+# Ignore os arquivos da pasta vendor
 /vendor/

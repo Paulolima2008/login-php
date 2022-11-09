@@ -4,7 +4,7 @@
 .project
 
 # Ignore o arquivo app.php
-/App/app.php
+/App/App.php
 
 # Ignore os arquivos da pasta vendor
 /vendor/

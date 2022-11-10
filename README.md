@@ -15,8 +15,21 @@ Inicialmente vai ser solicitado o login do usuário onde será feito algumas ver
 ## ⚙️ Configuração e Instalação
  - habilitar o módulo de reescrita no apache (veja tutorial na internet).
  - Configurar/atualizar o composer.
- - Editar as constantes do  arquivo /App/APP.php onde contém dados de configuração como por exemplo nome do projeto, hostname, usuário e senha do banco de dados e etc.
- - Criar a base de dados.
+ - Editar as constantes do  arquivo /App/APP.php
+  
+ ```
+define('APP_HOST'       , $_SERVER['HTTP_HOST'] . "/nome_do_projeto");
+define('PATH'           , realpath('./'));
+define('TITLE'          , "Título_do_projeto");
+define('DB_HOST'        , "localhost");
+define('DB_USER'        , "usuario_do_bd");
+define('DB_PASSWORD'    , "senha_do_bd");
+define('DB_NAME'        , "nome_do_bd");
+define('DB_DRIVER'      , "mysql");
+define('SMS_USER'       , "usuario_smsmarket");
+define('SMS_PASSWORD'   , "senha_smsmarket");
+```
+ 
  - executar o projeto.
  
 ```

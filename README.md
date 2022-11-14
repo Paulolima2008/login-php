@@ -14,7 +14,12 @@ Inicialmente vai ser solicitado o login do usuário onde será feito algumas ver
  
 ## ⚙️ Configuração e Instalação
  - habilitar o módulo de reescrita no apache (veja tutorial na internet).
- - Configurar/atualizar o composer.
+ - Configurar/atualizar o composer no terminal.
+ 
+```
+composer update
+```
+
  - Editar as constantes do  arquivo /App/APP.php
   
  ```

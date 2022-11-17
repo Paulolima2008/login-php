@@ -38,7 +38,6 @@ class AuthController extends Controller
             $this->redirect('/auth');
         }
         
-        
         $userDAO = new UserDAO();
         $user = $userDAO->validarLogin($user->getLogin());
         
@@ -59,10 +58,8 @@ class AuthController extends Controller
                 
             }// fim do if
         } // fim do if
-        
         // verificar se o objeto estar na base de dados
         if (!empty($user)){
-            
             // Verificar se existe o cookie com o token
             if (isset($_COOKIE['TOKEN'])) {
 
@@ -165,22 +162,19 @@ class AuthController extends Controller
         //instância o objeto
         $codPost = new Cod();
         $codPost->setChave($_POST['chave']); // recebe a chave digitada
-       
         //instância o objeto
         $user = new User();
         //instância o Dao para validar dados na base
         $userDAO = new UserDAO();
         $user = $userDAO->validarLogin(Sessao::retornaValorFormulario('username'));
         
-        //instância o Dao para salvar na base de dados
+        //instância o Dao para consulta a base de dados
         $codDAO = new CodDAO();
         $cod = $codDAO->getByUserIdLast($user->getId());
-        
 
         // verificar se o chave via post e igual ao da base de dados 
         if (strcasecmp ($codPost->getChave(), $cod->getChave()) == 0 )
         {
-         
             // Criar o cookie na máquina   
             setcookie('TOKEN', md5(Sessao::retornaValorFormulario('username')), (time() + (3 * 24 * 3600)),'/');
             
@@ -224,7 +218,7 @@ class AuthController extends Controller
         //instância smsmarket com login e senha
         $sms = new SMSMarket(SMS_USER, SMS_PASSWORD);
         //programa um sms para ser enviado
-        $msg = 'Araujo Seguros - Codigo de segurança de acesso: '.$cod->getChave();
+        $msg = 'Araujo Seguros - Codigo de seguranca de acesso: '.$cod->getChave();
         //$envio = $sms->sendSMS ($user->getTelefone(), $msg, 0, null, 55, null);
         
         // limpa as sessões

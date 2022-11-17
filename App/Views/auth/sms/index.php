@@ -34,7 +34,7 @@
 		<div class="logo">
 			<img src="http://<?php echo APP_HOST; ?>/public/assets/img/icon.png" alt="logo" />
 		</div>
-		<form action="http://<?php echo APP_HOST; ?>/auth/do" method="post">
+		<form action="http://<?php echo APP_HOST; ?>/auth/sms" method="post">
 		<div class="form">
 			<div id="chave-field" class="field-wrapper input">
 				<input id="chave" name="chave" autofocus maxlength="4" autocomplete="off" type="text" class="form-control" placeholder="Código enviado via SMS" onkeypress="return event.charCode >= 48 && event.charCode <= 57">

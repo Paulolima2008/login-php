@@ -49,13 +49,13 @@ class User
     {
         $this->token = $token;
     }
+    
     public function getTelefone()
     {
         return $this->telefone;
     }
-    
     public function setTelefone($telefone)
     {
-        $this->telefone = $telefone;
+        return $this->telefone = $telefone;
     }
 }

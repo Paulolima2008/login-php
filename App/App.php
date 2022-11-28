@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Controllers\AuthController;
+use App\Controllers\UserController;
 use Exception;
 
 class App
@@ -20,15 +20,27 @@ class App
          */
         define('APP_HOST'       , $_SERVER['HTTP_HOST'] . "/login-php");
         define('PATH'           , realpath('./'));
-        define('TITLE'          , "Autenticacao em 2 etapas");
+        define('TITLE'          , "Autenticação - Sistema de gestão araújo seguros");
         define('DB_HOST'        , "localhost");
         define('DB_USER'        , "root");
         define('DB_PASSWORD'    , "");
         define('DB_NAME'        , "login_php");
         define('DB_DRIVER'      , "mysql");
-        define('SMS_USER'       , "");
-        define('SMS_PASSWORD'   , "");
+        define('SMS_USER'       , "plima");
+        define('SMS_PASSWORD'   , "LDPg7x563enEdFH8");
+/*
+        define('APP_HOST'       , $_SERVER['HTTP_HOST'] . "/auth");
+        define('PATH'           , realpath('./'));
+        define('TITLE'          , "Autenticação - Sistema de gestão araújo seguros");
+        define('DB_HOST'        , "localhost");
+        define('DB_USER'        , "u258278060_super");
+        define('DB_PASSWORD'    , "RYqSb7abp!HZv7BAc6#!");
+        define('DB_NAME'        , "u258278060_login_araujo");
+        define('DB_DRIVER'      , "mysql");
+        define('SMS_USER'       , "plima");
+        define('SMS_PASSWORD'   , "LDPg7x563enEdFH8");
 
+*/
         $this->url();
     }
 
@@ -38,14 +50,14 @@ class App
             $this->controllerName = ucwords($this->controller) . 'Controller';
             $this->controllerName = preg_replace('/[^a-zA-Z]/i', '', $this->controllerName);
         } else {
-            $this->controllerName = "AuthController";
+            $this->controllerName = "UserController";
         }
 
         $this->controllerFile   = $this->controllerName . '.php';
         $this->action           = preg_replace('/[^a-zA-Z]/i', '', $this->action);
 
         if (!$this->controller) {
-            $this->controller = new AuthController($this);
+            $this->controller = new UserController($this);
             $this->controller->index();
         }
 

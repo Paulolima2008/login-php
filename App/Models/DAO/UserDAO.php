@@ -20,7 +20,7 @@ class UserDAO extends BaseDAO
     public  function autenticar($login, $senha)
     {
         $resultado = $this->select(
-            "SELECT * FROM user WHERE login ='".$login."' AND senha ='".$senha."' AND status = '1'"
+            "SELECT * FROM user WHERE login ='".$login."' AND senha ='".$senha."'"
         );
 
         return $resultado->fetchObject(User::class);
